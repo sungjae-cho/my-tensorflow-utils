@@ -1,24 +1,25 @@
 import tensorflow as tf
-
-def print_node(node):
+        
+def get_value(node):
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     with tf.Session(config=config) as sess:
         sess.run(tf.global_variables_initializer())
         node_val = sess.run(node)
-        print(node_val)
+    return node_val
         
-def print_nodes(nodes):
+def get_values(node):
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     with tf.Session(config=config) as sess:
         sess.run(tf.global_variables_initializer())
         nodes_val = sess.run(nodes)
-        print(nodes_val)
-
-def print_shape(tensor):
+    return nodes_val
+        
+def get_shape(node):
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     with tf.Session(config=config) as sess:
-        shape_val = sess.run(tf.shape(tensor))
-        print(shape_val)
+        sess.run(tf.global_variables_initializer())
+        nodes_val = sess.run(nodes)
+    return nodes_val
