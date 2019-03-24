@@ -8,7 +8,7 @@ def get_value(node):
         node_val = sess.run(node)
     return node_val
         
-def get_values(node):
+def get_values(nodes):
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     with tf.Session(config=config) as sess:
